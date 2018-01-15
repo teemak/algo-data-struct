@@ -23,5 +23,5 @@ function caesarCipher(str, num) {
   return newString;
 }
 
-let result = caesarCipher('cat', 2);
+let result = caesarCipher('zkc', 4);
 console.log(result);
