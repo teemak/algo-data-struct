@@ -43,12 +43,9 @@ function getMode(array) {
   let modeObj = {};
   
   array.forEach(num => {
-    if(!modeObj[num]) {
-      modeObj[num] = 0;
-    } else {
-      modeObj[num]++;
-    }
-  })
+    if(!modeObj[num]) modeObj[num] = 0;
+    modeObj[num]++;    
+  });
 
   let maxFrequency = 0;
   let modes = [];
@@ -57,19 +54,16 @@ function getMode(array) {
     if(modeObj[num] > maxFrequency) {
       modes = [num];
       maxFrequency = modeObj[num];
-    } else if(modeObj[num] === maxFrequency) {
-      modes.push(num);
-    }
-    
-    if(modes.length === Object.keys(modeObj).length) {
-      modes = [];
-    }            
-    return modes;
+    } else if(modeObj[num] === maxFrequency) modes.push(num);
   }
+    
+  if(modes.length === Object.keys(modeObj).length) modes = [];
+  return modes;  
 }
 
-let data = [1,2,3,4,5,4,6,1,4];
-let data1 = [9,10,23,10,23,9];
+let data1 = [1,2,3,4,5,4,6,1];
+let data2 = [9,10,23,10,23,9];
+
 let result = meanMedianMode(data1);
 
 console.log(result);
