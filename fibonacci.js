@@ -3,4 +3,4 @@ function fibonacci(position) {
   else return fibonacci(position - 1) + fibonacci(position - 2);
 }
 
-console.log(fibonacci(6));
+console.log(fibonacci(20));
