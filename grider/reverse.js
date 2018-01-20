@@ -8,11 +8,16 @@ function reverse1(str) {
   return reversed;
 }
 
-function reverse(str) {
+function reverse2(str) {
   return str.split('').reduce((rev, char) => char + rev, '');
 }
 
+function reverse3(str) {
+  debugger;
+  return str.split('').reverse().join('');
+}
+
 let data = 'The brown fox';
-let result = reverse(data);
+let result = reverse3(data);
 
 console.log(result);
