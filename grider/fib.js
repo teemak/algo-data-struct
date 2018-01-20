@@ -11,7 +11,7 @@ function memoize(fn) {
   };
 }
 
-function fib(n) {
+function slowFib(n) {
 
   if(n < 2) {
     return n;
@@ -20,5 +20,5 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2);
 }
 
-let result = memoize(fib)(9);
-console.log(result);
+const fib = memoize(slowFib);
+console.log(fib(129));
