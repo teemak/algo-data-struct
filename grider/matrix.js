@@ -44,3 +44,64 @@ let data = 6;
 let result = matrix(data);
 
 console.log(result);
+
+/* Chris's implementation
+// Outer loop then increase index loop again rinse repeat
+function matrix(n) {
+ 
+  var matrix = [];
+ 
+  for (let i = 1; i <= n; i++) {
+   matrix.push([]);
+  }
+ 
+  let sqPos = 0;
+  let sqSize = n;
+  let row;
+  let col;
+  let num = 1;
+ 
+  // square size loop
+  for (let i = sqSize; i >= 1; i-=2) {
+    row = sqPos;
+    col = sqPos;
+   
+    // top of square
+    for (let j = sqPos; j < sqSize + sqPos; j++) {
+     matrix[row][j] = num;
+     num++;
+     col = j;
+    }
+ 
+    // right side of square
+    for (let j = row + 1; j < sqSize + sqPos; j++) {
+     matrix[j][col] = num;
+     num++;
+     row = j;
+    }
+ 
+    // bottom of square
+    for (let j = row - 1; j >= sqPos; j--) {
+     matrix[row][j] = num;
+     num++;
+     col = j;
+    }
+ 
+    // left side of square
+    for (let j = row - 1; j >= sqPos + 1; j--) {
+     matrix[j][col] = num;
+     num++;
+     row = j;
+    }
+ 
+    sqSize-=2;
+    sqPos++;
+ 
+    if (sqSize <= 0) {
+     return matrix;
+    }
+ 
+  }
+ 
+}
+*/
