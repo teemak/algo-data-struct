@@ -36,7 +36,16 @@ let even = [2,4,6,8];
 let qOdd = new Queue();
 let qEven = new Queue();
 
-qOdd.add(...odd);
-qEven.add(...even);
+qOdd.add(1);
+qOdd.add(3);
+qOdd.add(5);
+qOdd.add(7);
+
+qEven.add(2);
+qEven.add(4);
+qEven.add(6);
+qEven.add(8);
 
 
+let result = weave(qOdd, qEven);
+console.log(result);
