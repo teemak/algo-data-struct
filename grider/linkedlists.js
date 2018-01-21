@@ -163,7 +163,9 @@ list.insertFirst('Toast');
 //list.removeFirst();
 //list.removeLast();
 list.insertLast('Fedmyster');
-list.removeAt(1);
+//list.removeAt(1);
 
-let result = list;
-console.log(result);
+//let result = list;
+//console.log(result);
+
+module.exports = { list };
