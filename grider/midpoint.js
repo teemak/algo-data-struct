@@ -11,7 +11,7 @@ function midpoint(list) {
   return slow;
 }
 
-list.insertFirst('Tee');
+//list.insertFirst('Tee');
 let result = midpoint(list);
 let pretty = JSON.stringify(result, null, 4);
 
