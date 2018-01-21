@@ -153,6 +153,13 @@ class LinkedList {
     }
   }
 
+  /*TEST FOR CIRCULAR*/
+  pointToHead() {
+    let last = this.getLast();
+
+    last.next = this.head;
+  }
+
 }
 
 const list = new LinkedList();
@@ -167,5 +174,9 @@ list.insertLast('Fedmyster');
 
 //let result = list;
 //console.log(result);
+
+/*CIRCULAR
+list.pointToHead();
+CIRCULAR*/
 
 module.exports = { list };
