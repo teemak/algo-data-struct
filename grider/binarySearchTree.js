@@ -17,6 +17,19 @@ class Node {
     }
   }
 
+  contains(data) {
+    if (this.data === data) {
+      return this;
+    }
+
+    if (this.data < data && this.right) {
+      return this.right.contains(data);
+    } else if (this.data > data && this.left) {
+      return this.left.contains(data);
+    }
+
+    return null;
+  }
 }
 
 const numbahs = new Node(25);
@@ -25,5 +38,7 @@ numbahs.insert(32);
 numbahs.insert(1);
 numbahs.insert(6);
 
-const result = JSON.stringify(numbahs, null, 4);
-console.log(result);
+/*const result = JSON.stringify(numbahs, null, 4);
+console.log(numbahs.contains(25));*/
+
+module.exports = numbahs;

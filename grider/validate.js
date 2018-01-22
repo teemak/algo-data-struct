@@ -1,0 +1,23 @@
+const numbahs = require('./binarySearchTree');
+
+function validate(node, min = null, max = null) {
+  if (max !== null && node.data > max) {
+    return false;
+  }
+
+  if (min !== null && node.data < min) {
+    return false;
+  }
+
+  if (node.left && !validate(node.left, min, node.data)) {
+    return false;
+  }
+
+  if (node.right && !validate(node.right, node.data, max)) {
+    return false;
+  }
+  return true;
+}
+
+let result = validate(numbahs);
+console.log(Object.getOwnPropertyNames(numbahs));
