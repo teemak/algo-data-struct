@@ -22,8 +22,7 @@ class Tree {
     this.root = null;
   }
 
-
-  //Add to end hence PUSH
+  //Add to end hence PUSH - CEO to CTO to ENGINEER - each floor
   traverseBF(fn) {
     const arr = [this.root];
 
@@ -33,7 +32,7 @@ class Tree {
       fn(node);
     }
   }
-  //Add to start hence UNSHIFT
+  //Add to start hence UNSHIFT - All the way down DEPTH
   traverseDF(fn) {
     const arr = [this.root];
 
@@ -48,12 +47,31 @@ class Tree {
 
 const node = new Node('Tee');
 node.add('Mak');
-node.remove('Mak');
+//node.remove('Mak');
 node.add('Erza');
 
+const familyB = [];
+const familyD = [];
 const teehee = new Tree();
 teehee.root = node;
-teehee.root.children[0].add('Crystal'); 
+teehee.root.add('Crystal'); 
+teehee.root.children[1].add('Oscar'); 
+
+const tree = node;
+
+/*
+teehee.traverseBF(node => {
+  familyB.push(node.data);
+});
+
+teehee.traverseDF(node => {
+  familyD.push(node.data);
+});
 
 const pretty = JSON.stringify(teehee, null, 4);
-console.log(pretty);
+console.log(`This is Breadth Search ${familyB}`);
+console.log(`This is Depth Search ${familyD}`);
+console.log(`Entire tree => ${pretty}`);
+*/
+
+module.exports = tree;
