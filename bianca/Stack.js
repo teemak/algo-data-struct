@@ -1,6 +1,6 @@
 //Prototype Design Pattern
 function Stack(capacity) {
-  this._capacity = capacity || infinity;
+  this._capacity = capacity || Infinity;
   this._storage = {};
   //count is KEY || INDEX
   this._count = 0;  
@@ -45,5 +45,7 @@ foods.push('Ice Cream');
 foods.pop();
 
 let result = foods.peek();
-console.log(result);
+//console.log(result);
 //console.log(foods);
+
+module.exports = Stack;
