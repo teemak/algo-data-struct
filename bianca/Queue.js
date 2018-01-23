@@ -46,6 +46,52 @@ Queue.prototype.until = function(value) {
   return null;
 }
 
+/*STACK*/
+function Stack(capacity) {
+  this._capacity = capacity || Infinity;
+  this._storage = {};
+  this._count = 0;
+}
+
+Stack.prototype.push = function(value) {
+  if (this._count < this._capacity) {
+    this._storage[this._count++] = value;
+    return this._count;
+  }
+  return 'Max capacity already reached. Remove element before adding a new one.';
+}
+
+Stack.prototype.pop = function() {
+  let value = this._storage[--this._count];
+  delete this._storage[this._count];
+  if (this._count < 0) {
+    this._count = 0;
+  }
+  return value;
+}
+
+Stack.prototype.peek = function() {
+  return this._storage[this._count - 1];
+}
+
+Stack.prototype.count = function() {
+  return this._count;
+}
+/*STACK*/
+
+/*** Queue with Two Stacks ***/
+function Queue_TwoStacks() {
+  this._stackIn = new Stack();
+  this._stackOut = new Stack();
+}
+
+
+
+
+
+/*** Queue with Two Stacks ***/
+
+
 const line = new Queue();
 line.enqueue('Boa');
 line.enqueue('Every Heart');
@@ -53,4 +99,3 @@ line.enqueue('Every Heart');
 
 let result = line.until('Boa');
 console.log(line);
-console.log(result);
